@@ -1,0 +1,115 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px solid green; */
+    color: rgba(255, 255, 255, 0.85);
+}
+body{
+    background-image: url(./Images/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
+    text-align: center;
+}
+h1{
+    padding: 18px;
+}
+h2{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 16px;
+}
+h4{
+    margin-top: 12px;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 20px;
+    padding: 12px;
+    height: 20px;
+}
+.c1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Matrix */
+.matrix{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.grid-container {                               /* 9x9 */
+    display: inline-grid;
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.grid-item {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    justify-content: center;
+}
+
+/* Digit-Container */
+.digits_container:hover{
+    cursor: pointer;
+}
+.digits_container{
+    display: grid;
+    grid-template-columns: 40px;
+    margin-bottom: 56px;
+    margin-left: 20px;
+}
+.grid-item2 {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    justify-content: center;
+}
+
+/* Button */
+.btn{
+    margin: 6px;
+    margin-top: 18px;
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    transition: 200ms;
+}
+.btn:hover{
+    transition: 200ms;
+    background-color: rgb(0, 100, 0);
+    cursor: pointer;
+}
+#n0{
+    border: 1px solid red;
+    background: none;
+}
+#n0:hover{
+    background: rgba(255, 0, 0, 0.7);
+}
+
+/* Footer */
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    padding: 4px;
+    padding-right: 48px;
+    text-align: right;
+}
+footer>div{
+    margin-right: 48px;
+}
+footer>div>a>img{
+    padding: 4px 8px 4px 8px;
+}

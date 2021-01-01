@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <h1>Sudoku Solver</h1>
+        <h2>Why solve Sudoku-puzzles by hand, when you can write software to solve them for you?</h2>
+    </div>
+    <div><h4 id="status">Enter Valid Sudoku Input</h4></div>
+    <div class="c1">
+        <div>
+            <div class="matrix">
+                <div class="grid-container">
+                    <div id="m11" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m12" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m13" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m21" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m22" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m23" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m31" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m32" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m33" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m14" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m15" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m16" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m24" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m25" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m26" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m34" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m35" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m36" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m17" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m18" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m19" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m27" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m28" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m29" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m37" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m38" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m39" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m41" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m42" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m43" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m51" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m52" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m53" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m61" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m62" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m63" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m44" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m45" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m46" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m54" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m55" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m56" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m64" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m65" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m66" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m47" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m48" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m49" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m57" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m58" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m59" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m67" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m68" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m69" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m71" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m72" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m73" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m81" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m82" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m83" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m91" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m92" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m93" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m74" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m75" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m76" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m84" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m85" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m86" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m94" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m95" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m96" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+                <div class="grid-container">
+                    <div id="m77" onclick="putVal(id)" class="grid-item"> </div>
+                    <div id="m78" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m79" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m87" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m88" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m89" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m97" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m98" onclick="putVal(id)" class="grid-item">  </div>
+                    <div id="m99" onclick="putVal(id)" class="grid-item">  </div>
+                </div>
+            </div>
+            <button onclick="reset()" class="btn">Reset</button>
+            <button onclick="solve()" class="btn">Solve</button>
+            <button onclick="erase()" class="btn" id="n0">Erase</button>
+        </div>
+        <div class="digits_container">
+            <div id="n1" onclick="clk1()" class="grid-item2">1</div>
+            <div id="n2" onclick="clk2()" class="grid-item2">2</div>
+            <div id="n3" onclick="clk3()" class="grid-item2">3</div>
+            <div id="n4" onclick="clk4()" class="grid-item2">4</div>
+            <div id="n5" onclick="clk5()" class="grid-item2">5</div>
+            <div id="n6" onclick="clk6()" class="grid-item2">6</div>
+            <div id="n7" onclick="clk7()" class="grid-item2">7</div>
+            <div id="n8" onclick="clk8()" class="grid-item2">8</div>
+            <div id="n9" onclick="clk9()" class="grid-item2">9</div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="https://github.com/DeepakRathore2k1" target="_blank"><img src="./Images/GitHubLogo.png" alt="GitHub" width="32px" height="32px"></a>
+            <a href="https://www.linkedin.com/in/deepak-rathore-aa9b5719a/" target="_blank"><img src="./Images/LinkedinLogo.png" alt="Linkedin" width="32px" height="32px"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
